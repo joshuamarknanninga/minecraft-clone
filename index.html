@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Clone++</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="menu" class="overlay-card">
+      <h1>Minecraft Clone++</h1>
+      <p class="tagline">A faster-to-play browser voxel sandbox with a live minimap, undo/redo building, boost movement, and dynamic day/night.</p>
+      <div class="controls-grid">
+        <span><kbd>WASD</kbd> move</span>
+        <span><kbd>Mouse</kbd> look</span>
+        <span><kbd>Space</kbd> jump</span>
+        <span><kbd>Shift</kbd> sprint</span>
+        <span><kbd>Q</kbd> boost dash</span>
+        <span><kbd>Left click</kbd> break</span>
+        <span><kbd>Right click</kbd> place</span>
+        <span><kbd>1-5</kbd> choose block</span>
+        <span><kbd>Z</kbd> undo</span>
+        <span><kbd>Y</kbd> redo</span>
+        <span><kbd>M</kbd> minimap zoom</span>
+        <span><kbd>R</kbd> reseed world</span>
+        <span><kbd>Esc</kbd> release cursor</span>
+      </div>
+      <button id="play-button">Click to Play</button>
+      <p id="seed-line">Seed: <span id="seed-value"></span></p>
+    </div>
+
+    <div id="hud">
+      <div class="hud-top-left overlay-card small-card">
+        <div><strong>Biome</strong>: <span id="biome-label">Plains</span></div>
+        <div><strong>Altitude</strong>: <span id="altitude-label">0</span></div>
+        <div><strong>Time</strong>: <span id="time-label">06:00</span></div>
+      </div>
+      <div class="hud-top-right overlay-card small-card">
+        <canvas id="minimap" width="180" height="180"></canvas>
+        <div class="minimap-caption">Minimap</div>
+      </div>
+      <div id="crosshair">+</div>
+      <div id="toast"></div>
+      <div id="hotbar" class="overlay-card"></div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
